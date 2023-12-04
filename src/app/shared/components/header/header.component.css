@@ -2,3 +2,15 @@
     font-family: cursive;
     font-size: larger;
 }
+
+#nav{
+    border-bottom: 5px solid red;
+}
+#navicon{
+    transition: transform 0.3s;
+    
+}
+
+#navicon:hover{
+    transform: scale(1.2);
+}
