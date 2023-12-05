@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { HotelsRoutingModule } from './hotels-routing.module';
 import { HotelsComponent } from './hotels.component';
+import { FormsModule } from '@angular/forms';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 
 
 @NgModule({
@@ -11,7 +14,10 @@ import { HotelsComponent } from './hotels.component';
   ],
   imports: [
     CommonModule,
-    HotelsRoutingModule
-  ]
+    HotelsRoutingModule,
+    FormsModule,
+    
+    BsDatepickerModule.forRoot()
+    ]
 })
 export class HotelsModule { }

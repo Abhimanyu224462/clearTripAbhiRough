@@ -3,8 +3,8 @@
     font-size: larger;
 }
 
-#nav{
-    border-bottom: 5px solid red;
+#iconNav{
+    /* border-bottom: 1px solid red; */
 }
 #navicon{
     transition: transform 0.3s;
@@ -13,4 +13,11 @@
 
 #navicon:hover{
     transform: scale(1.2);
+    cursor: pointer;
+}
+
+.active{
+    border-bottom: 4px solid red !important;
+    font-weight: 500;
+    
 }
