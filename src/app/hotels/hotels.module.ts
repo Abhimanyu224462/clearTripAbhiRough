@@ -5,12 +5,14 @@ import { HotelsRoutingModule } from './hotels-routing.module';
 import { HotelsComponent } from './hotels.component';
 import { FormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { HotelsListComponent } from './hotels-list/hotels-list.component';
 
 
 
 @NgModule({
   declarations: [
-    HotelsComponent
+    HotelsComponent,
+    HotelsListComponent
   ],
   imports: [
     CommonModule,

@@ -7,7 +7,7 @@
         <div class="col-md-4">
             <div class="mb-3">
                 <label for="id1" class="form-label">Enter City</label>
-                <input type="text" class="form-control py-2" id="id1">
+                <input type="text" class="form-control py-2" id="id1" name="city" [(ngModel)]="city">
             </div>
         </div>
         <div class="col-md-4">
@@ -18,7 +18,10 @@
                   <input id="3" type="text"
                          placeholder="Daterangepicker"
                          class="form-control"
-                         bsDaterangepicker>
+                         bsDaterangepicker
+                         name="chooseDate"
+                         [(ngModel)]="chooseDate"
+                         (ngModelChange)="dateSelect()">
                 </div>
               </div>
               </div>
@@ -27,13 +30,12 @@
             <label for="id2" class="form-label">Rooms</label>
             <div class="dropdown curosr">
                 <button class="btn border dd dropdown-toggle w-75" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  1 Room,2 Adults
+                  {{rooms}}
                 </button>
                 <ul class="dropdown-menu w-75" aria-labelledby="dropdownMenuButton1">
 
-                  <li><a class="dropdown-item dd" >1 Room,2 Adults</a></li>
-                  <li><a class="dropdown-item dd" >1 Room,1 Adults</a></li>
-                  <li><a class="dropdown-item dd">2 Room,4 Adults</a></li>
+                  <li><a class="dropdown-item dd" *ngFor="let opt of roomsArr" (click)="selroom(opt)" >{{opt}}</a></li>
+                  
                  
                 </ul>
               </div>
@@ -42,10 +44,12 @@
         </div>
         
         <div class="text-center">
-            <button type="button" class="btn btn-secondary px-5 m-1">Search Hotels</button>
+            <button type="button" class="btn btn-secondary px-5 m-1" (click)="searchHotels()" routerLink="/hotels/search-hotels">Search Hotels</button>
         </div>
 
     </div>
 
 
-   
+   {{checkIn|date:'short'}}
+   {{city}}
+   {{rooms}}
