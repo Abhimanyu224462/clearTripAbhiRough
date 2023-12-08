@@ -14,6 +14,8 @@ checkIn:null,
 checkOut:null,
 rooms:""
   }
+item: any;
+  hotelList: any;
 
 
   constructor(private ActivatedRoute:ActivatedRoute, private http:HttpService ){
@@ -30,9 +32,14 @@ rooms:""
   
 
   ngOnInit(){
-   let endPoint="search-hotels?city=" + this.hotelListObj.city + "&checkIn=" + this.hotelListObj.checkIn + "&checkOut=" + this.hotelListObj.checkOut + "&rooms=" + this.hotelListObj.rooms
-   this.http.getDataFromServer(endPoint).subscribe((response:any)=>{
-    console.log("Response we get", response)
+   let endPoint="search-hotels"
+   this.http.getHotelsDataFromServer(endPoint,this.hotelListObj).subscribe((el:any)=>{
+      if(el && el.response && el.response.personalizedSections){
+        this.hotelList = el.response.personalizedSections
+        console.log("list of hotels", this.hotelList)
+      }
+    
+    console.log("Response we get", el)
    })
   }
   // ngOnInit(){
