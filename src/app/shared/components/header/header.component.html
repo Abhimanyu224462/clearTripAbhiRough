@@ -57,7 +57,7 @@
         </div>
         <div class="modal-body">
           <app-login *ngIf="selectedAct != 'Sign-Up'" (emitAction)="getAction($event)"></app-login>
-          <app-sign-up *ngIf="selectedAct == 'Sign-Up'"></app-sign-up>
+          <app-sign-up *ngIf="selectedAct == 'Sign-Up'" (emitSignInAction)="getAction($event)"></app-sign-up>
         </div>
         <!-- <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
