@@ -3,7 +3,7 @@
         <div class="ms-5 p-2 bd-highlight logo">Make YOUR Trip</div>
 
         <div class="p-2 bd-highlight">
-            <button class="me-5 px-2 btn btn-secondary">LogIn/SignUp</button>
+            <button class="me-5 px-2 btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">LogIn/SignUp</button>
         </div>
     </div>
 </div>
@@ -44,3 +44,25 @@
         </div>
     </nav>
 </div>
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">LogIn/SignUp</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-login *ngIf="selectedAct != 'Sign-Up'" (emitAction)="getAction($event)"></app-login>
+          <app-sign-up *ngIf="selectedAct == 'Sign-Up'"></app-sign-up>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
